@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dana_training/screens/pulsa.dart';
 
 class PaymentMenu extends StatefulWidget {
   @override
@@ -9,6 +10,10 @@ class _PaymentMenu extends State<PaymentMenu> {
 
   onTapMenu() {
     print("Tapped menu ");
+  }
+
+  buyPulsa() {
+    Navigator.push(context,MaterialPageRoute(builder: (context) => Pulsa()),);
   }
 
   Widget RowMenu(String name, IconData ic, Color icColor) {
@@ -73,9 +78,7 @@ class _PaymentMenu extends State<PaymentMenu> {
                             child: Text("Buy Now", style: TextStyle(
                                 color: Colors.white, fontSize: 15.0)),
                           ),
-                          onTap: () {
-                            print("Buy ME!!!");
-                          },
+                          onTap: buyPulsa,
                         )
                       ],
                     )

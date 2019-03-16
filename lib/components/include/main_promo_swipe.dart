@@ -16,7 +16,7 @@ class _MainPromoSwipe extends State<MainPromoSwipe> {
               right: 20.0,
               left: 20.0),
           margin: EdgeInsets.only(
-            top: 5.0
+            top: 15.0
           ),
           height: 150,
           child: new Swiper(

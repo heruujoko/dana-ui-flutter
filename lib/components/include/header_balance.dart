@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dana_training/helpers/formatter.dart';
 
 class Header_balance extends StatefulWidget {
   @override
@@ -9,12 +10,15 @@ class _Header_balance extends State<Header_balance> {
 
   @override
   Widget build(BuildContext context) {
+
+    double balance = 5600000;
+
     return (
         Container(
           child: Row(
             children: <Widget>[
               Text("Rp.",style: TextStyle(fontSize: 14.0)),
-              Text("123.568.791",style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold))
+              Text(Formatter.number(balance), style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold))
             ],
           )
         )

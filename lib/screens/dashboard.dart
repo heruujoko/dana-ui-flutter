@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dana_training/components/include/header_balance.dart';
 import 'package:dana_training/components/include/payment_menu.dart';
 import 'package:dana_training/components/include/main_promo_swipe.dart';
+import 'package:dana_training/components/include/explore_dana.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -9,7 +10,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _Dashboard extends State<Dashboard> {
-
   Widget background() {
     return Column(
       children: <Widget>[
@@ -17,12 +17,8 @@ class _Dashboard extends State<Dashboard> {
             child: Container(
               decoration: const BoxDecoration(color: Colors.blue),
             ),
-            flex: 1
-        ),
-        Expanded(
-            child: Container(),
-            flex: 3
-        )
+            flex: 1),
+        Expanded(child: Container(), flex: 3)
       ],
     );
   }
@@ -61,31 +57,34 @@ class _Dashboard extends State<Dashboard> {
               children: <Widget>[
                 Text("Receive", style: TextStyle(color: Colors.white)),
                 IconButton(
-                  icon: Icon(Icons.monetization_on, color: Colors.white, size: 35),
+                  icon: Icon(Icons.monetization_on,
+                      color: Colors.white, size: 35),
                 )
               ],
             )
-          ]
-      ),
+          ]),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return (
-        Scaffold(
-            appBar: AppBar(
-              centerTitle: false,
-              title: Header_balance(),
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.message),
-                  tooltip: 'Increase volume by 10',
-                  onPressed: () {},
-                ),
-              ],
+    return (Scaffold(
+        appBar: AppBar(
+          elevation: 0.0,
+          centerTitle: false,
+          title: Header_balance(),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.message),
+              tooltip: 'Increase volume by 10',
+              onPressed: () {},
             ),
-            body: Container(
+          ],
+        ),
+        body: SingleChildScrollView(
+          physics: ClampingScrollPhysics(),
+            child: Container(
+                height: MediaQuery.of(context).size.height * 1.1,
                 child: Stack(
                   children: <Widget>[
                     background(),
@@ -93,13 +92,11 @@ class _Dashboard extends State<Dashboard> {
                       children: <Widget>[
                         mainMenu(),
                         PaymentMenu(),
-                        MainPromoSwipe()
+                        MainPromoSwipe(),
+                        ExploreDana()
                       ],
                     )
                   ],
-                )
-            )
-        )
-    );
+                )))));
   }
 }
