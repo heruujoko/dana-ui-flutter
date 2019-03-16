@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dana_training/components/include/header_balance.dart';
 import 'package:dana_training/components/include/payment_menu.dart';
+import 'package:dana_training/components/include/main_promo_swipe.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -88,8 +89,13 @@ class _Dashboard extends State<Dashboard> {
                 child: Stack(
                   children: <Widget>[
                     background(),
-                    mainMenu(),
-                    PaymentMenu()
+                    Column(
+                      children: <Widget>[
+                        mainMenu(),
+                        PaymentMenu(),
+                        MainPromoSwipe()
+                      ],
+                    )
                   ],
                 )
             )

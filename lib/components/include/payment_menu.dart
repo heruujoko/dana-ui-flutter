@@ -34,10 +34,6 @@ class _PaymentMenu extends State<PaymentMenu> {
   Widget build(BuildContext context) {
     return Container(
       padding: new EdgeInsets.only(
-          top: MediaQuery
-              .of(context)
-              .size
-              .height * .15,
           right: 20.0,
           left: 20.0),
       child: new Container(
