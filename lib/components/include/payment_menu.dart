@@ -16,7 +16,11 @@ class _PaymentMenu extends State<PaymentMenu> {
     Navigator.push(context,MaterialPageRoute(builder: (context) => Pulsa()),);
   }
 
-  Widget RowMenu(String name, IconData ic, Color icColor) {
+  Widget ImageRow(String name) {
+    return Image.asset('images/'+name, height: 50.0,);
+  }
+
+  Widget RowMenu(String name, String imageName, Color icColor) {
     return InkWell(
       child: Container(
           width: MediaQuery
@@ -27,7 +31,7 @@ class _PaymentMenu extends State<PaymentMenu> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Icon(ic, color: icColor, size: 35.0,),
+              ImageRow(imageName),
               Text(name, textAlign: TextAlign.center)
             ],
           )),
@@ -87,14 +91,14 @@ class _PaymentMenu extends State<PaymentMenu> {
                     height: MediaQuery
                         .of(context)
                         .size
-                        .height / 10,
+                        .height / 8,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        RowMenu("DANA Kaget", Icons.account_balance_wallet, Colors.blue),
-                        RowMenu("Electric", Icons.lightbulb_outline, Colors.orange),
-                        RowMenu("Cashout", Icons.monetization_on, Colors.green),
-                        RowMenu("Others", Icons.missed_video_call, Colors.grey)
+                        RowMenu("DANA Kaget", "DANA_kaget.png", Colors.blue),
+                        RowMenu("Electric", "electric.png", Colors.orange),
+                        RowMenu("Cashout", "withdraw.png", Colors.green),
+                        RowMenu("Others", "misc.png", Colors.grey)
                       ],
                     ),
                   )

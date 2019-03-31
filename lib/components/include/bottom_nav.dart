@@ -29,7 +29,7 @@ class _BottomNav extends State<BottomNav> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Icon(ic, color: active? Colors.blue : Colors.grey),
-            Text(name, style: TextStyle(color: active? Colors.blue : Colors.grey))
+            Text(name, style: TextStyle(color: active? Colors.blue : Colors.grey, fontSize: 7.0))
           ],
         ),
       ),
@@ -49,7 +49,7 @@ class _BottomNav extends State<BottomNav> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Icon(ic, size: 40, color: active? Colors.blue : Colors.grey),
-          Text(name, style: TextStyle(color: active? Colors.blue : Colors.grey)),
+          Text(name, style: TextStyle(color: active? Colors.blue : Colors.grey, fontSize: 7.0)),
         ],
       ),
     );

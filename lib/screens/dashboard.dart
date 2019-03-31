@@ -5,6 +5,7 @@ import 'package:dana_training/components/include/header_balance.dart';
 import 'package:dana_training/components/include/payment_menu.dart';
 import 'package:dana_training/components/include/main_promo_swipe.dart';
 import 'package:dana_training/components/include/explore_dana.dart';
+import 'package:dana_training/components/include/dana_news.dart';
 import 'package:dana_training/components/include/bottom_nav.dart';
 
 import 'package:dana_training/event/bottom_nav_event.dart';
@@ -139,7 +140,7 @@ class _Dashboard extends State<Dashboard> {
         body: SingleChildScrollView(
             physics: ClampingScrollPhysics(),
             child: Container(
-                height: MediaQuery.of(context).size.height * 1.1,
+                height: MediaQuery.of(context).size.height * 1.6,
                 child: Stack(
                   children: <Widget>[
                     background(),
@@ -148,7 +149,8 @@ class _Dashboard extends State<Dashboard> {
                         mainMenu(),
                         PaymentMenu(),
                         MainPromoSwipe(),
-                        ExploreDana()
+                        ExploreDana(),
+                        DanaNews()
                       ],
                     )
                   ],
